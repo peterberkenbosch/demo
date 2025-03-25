@@ -11,7 +11,7 @@ class Components::Base < Phlex::HTML
     def before_template
       comment { "Before #{self.class.name}" }
       super
-      comment { "After #{self.class.name}"}
+      comment { "After #{self.class.name}" }
     end
   end
 end
