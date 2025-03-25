@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/lazaronixon/css-zero.git
+  revision: 6b2944d07bab8fcfdd6c05008cc47d02c7accc8b
+  specs:
+    css-zero (1.2.0)
+
+GIT
   remote: https://github.com/phlex-ruby/phlex-rails.git
   revision: ea5b98d4b20f5ffebd95e68007302be605a00240
   specs:
@@ -379,6 +385,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
+  css-zero!
   debug
   importmap-rails
   jbuilder
