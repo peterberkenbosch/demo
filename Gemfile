@@ -67,4 +67,4 @@ end
 
 gem "phlex-rails", github: "phlex-ruby/phlex-rails"
 gem "css-zero", github: "lazaronixon/css-zero"
-
+gem "phlex-icons", github: "AliOsm/phlex-icons"
