@@ -1,0 +1,18 @@
+/* Dark mode utilities */
+.dark\:block {
+  display: none;
+}
+
+.dark\:hidden {
+  display: block;
+}
+
+:root[data-theme="dark"] .dark\:block {
+  display: block;
+}
+
+:root[data-theme="dark"] .dark\:hidden {
+  display: none;
+}
+
+/* Additional dark mode utilities can be added here */

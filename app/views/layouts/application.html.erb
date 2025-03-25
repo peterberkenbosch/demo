@@ -27,13 +27,35 @@
   <body class="header-layout">
     <header id="header">
       <div class="container">
-        <h1 class="font-bold text-2xl">Demo</h1>
+        <div class="flex justify-between items-center">
+          <h1 class="font-bold text-2xl">Demo</h1>
+          <button
+            class="theme-toggle"
+            data-controller="theme"
+            data-action="theme#toggle"
+            data-theme-target="toggle"
+            aria-label="Toggle dark mode"
+            role="switch"
+            aria-checked="false"
+          >
+
+            <%= render PhlexIcons::Lucide::Sun.new(class: "hidden dark:block") %>
+            <%= render PhlexIcons::Lucide::Moon.new(class: "block dark:hidden") %>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <% if notice.present? %>
-        <div popover class="flash" style="--flash-position: 5rem;" data-controller="element-removal" data-action="animationend->element-removal#remove" role="alert"><%= notice %></div>
+        <div
+          popover
+          class="flash"
+          style="--flash-position: 5rem;"
+          data-controller="element-removal"
+          data-action="animationend->element-removal#remove"
+          role="alert"
+        ><%= notice %></div>
       <% end %>
       <div class="container">
         <%= yield %>
