@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/AliOsm/phlex-icons.git
+  revision: 54b206315c1700b45c199f0cdc5ecbea4ef24611
+  specs:
+    phlex-icons (2.15.0)
+      phlex (>= 1.11)
+
+GIT
   remote: https://github.com/lazaronixon/css-zero.git
   revision: 844e3308db57337457a6090fb5604ee80827b55f
   specs:
@@ -395,6 +402,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  phlex-icons!
   phlex-rails!
   propshaft
   puma (>= 5.0)
