@@ -65,5 +65,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
-
 gem "css-zero", github: "lazaronixon/css-zero"
+gem "phlex-rails", github: "phlex-ruby/phlex-rails"
