@@ -1,6 +1,6 @@
 .btn {
   --btn-background: var(--color-bg);
-  --hover-color: oklch(from var(--btn-background) calc(l * .95) c h);
+  --btn-hover-color: oklch(from var(--btn-background) calc(l * .95) c h);
 
   align-items: center;
   background-color: var(--btn-background);
@@ -26,14 +26,14 @@
   }
 
   &:hover {
-    background-color: var(--btn-hover-color, var(--hover-color));
+    background-color: var(--btn-hover-color);
   }
 
   &:focus-visible {
     outline: var(--btn-outline-size, 2px) solid var(--color-selected-dark);
   }
 
-  &:is(:disabled, [aria-disabled=true]) {
+  &:is(:disabled, [aria-disabled="true"]) {
     opacity: var(--opacity-50);
     pointer-events: none;
   }
@@ -82,7 +82,7 @@
   --btn-padding: var(--size-2);
 }
 
-[aria-busy=true] .btn--loading:disabled {
+[aria-busy="true"] .btn--loading:disabled {
   > * {
     visibility: hidden;
   }
