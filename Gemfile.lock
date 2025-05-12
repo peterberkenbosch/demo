@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/AliOsm/phlex-icons.git
-  revision: 3e9598bb796a51facba142d8f0ca40de4ae94b8d
+  revision: c0ed40e07174dffba077afff3f2c13aac192a310
   specs:
-    phlex-icons (2.16.0)
+    phlex-icons (2.20.0)
       phlex (>= 1.11)
 
 GIT
