@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/AliOsm/phlex-icons.git
-  revision: 3e9598bb796a51facba142d8f0ca40de4ae94b8d
+  revision: 986c45413484a2aadd80ea0a01bef482e0f432d8
   specs:
-    phlex-icons (2.16.0)
+    phlex-icons (2.24.0)
       phlex (>= 1.11)
 
 GIT
@@ -377,7 +377,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.2)
+    zeitwerk (2.7.3)
 
 PLATFORMS
   aarch64-linux
