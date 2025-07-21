@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def index
     render Views::Home::Index.new
   end
+
+  def sample
+  end
 end
