@@ -15,8 +15,20 @@ Rails.application.configure do
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
-  # Cache assets for far-future expiry since they are all digest stamped.
-  config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
+  # Cache digest stamped assets for far-future expiry.
+  # Short cache for others: robots.txt, sitemap.xml, 404.html, etc.
+  config.public_file_server.headers = {
+    "cache-control" => lambda do |path, _|
+      if path.start_with?("/assets/")
+        # Files in /assets/ are expected to be fully immutable.
+        # If the content change the URL too.
+        "public, immutable, max-age=#{1.year.to_i}"
+      else
+        # For anything else we cache for 1 minute.
+        "public, max-age=#{1.minute.to_i}, stale-while-revalidate=#{5.minutes.to_i}"
+      end
+    end
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
@@ -47,11 +59,10 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store
+  # config.cache_store = :mem_cache_store
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :queue } }
+  # config.active_job.queue_adapter = :resque
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
