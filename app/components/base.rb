@@ -4,6 +4,7 @@ class Components::Base < Phlex::HTML
   # Include any helpers you want to be available across all components
   include Phlex::Rails::Helpers::Routes
   include PhlexIcons
+  register_output_helper :phlex_icon
 
   if Rails.env.development?
     def before_template
